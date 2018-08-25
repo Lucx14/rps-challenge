@@ -25,11 +25,12 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-    $player_1_choice = params[:user_choice]
+    $player_1.choice = params[:user_choice]
     redirect '/result'
   end
 
   get '/result' do
+    @player = $player_1
     erb :result
   end
 
