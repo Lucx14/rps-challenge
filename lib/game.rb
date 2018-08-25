@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'computer'
+
 class Game
 
   attr_reader :player, :computer
@@ -10,7 +13,7 @@ class Game
 
 
   def decide_winner
-    player
+    computer
   end
 
 

@@ -17,4 +17,6 @@ feature 'show results' do
     click_button 'Submit'
     expect(page).to have_content("Computer choice is ")
   end
+
+
 end
