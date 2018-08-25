@@ -6,9 +6,9 @@ class Rps < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/welcome' do
     @player_1_name = params[:player_1_name]
-    erb :play
+    erb :welcome
   end
 
   run! if app_file == $0
