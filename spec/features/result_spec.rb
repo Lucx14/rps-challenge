@@ -15,6 +15,6 @@ feature 'show results' do
     click_button 'Play game!'
     fill_in :user_choice, with: 'rock'
     click_button 'Submit'
-    expect(page).to have_content("Computer choice is paper")
+    expect(page).to have_content("Computer choice is ")
   end
 end

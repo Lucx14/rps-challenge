@@ -12,6 +12,11 @@ class Game
     player
   end
 
+  def computer_choice
+    ['rock', 'paper', 'scissors'].sample
+  end
+
+
 
 
 end
