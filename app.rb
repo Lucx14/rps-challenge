@@ -10,12 +10,13 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    session[:player_1_name] = params[:player_1_name]
+    # using global variable bad practice learn how to avoid!!
+    $player_1 = Player.new(params[:player_1_name])
     redirect '/welcome'
   end
 
   get '/welcome' do
-    @player_1_name = session[:player_1_name]
+    @player = $player_1
     erb :welcome
   end
 
