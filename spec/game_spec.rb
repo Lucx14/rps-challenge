@@ -12,12 +12,7 @@ describe Game do
     end
   end
 
-  describe '#computer_choice' do
 
-    it 'randomly chooses rock paper or scissors for the computers choice' do
-      expect(game.computer_choice).to eq('paper').or eq('rock').or eq('scissors')
-    end
-  end
 
 
 

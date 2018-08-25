@@ -1,10 +1,11 @@
 class Game
 
-  attr_reader :player
+  attr_reader :player, :computer
 
 
-  def initialize(player)
+  def initialize(player, computer = Computer.new)
     @player = player
+    @computer = computer
   end
 
 
@@ -12,9 +13,6 @@ class Game
     player
   end
 
-  def computer_choice
-    ['rock', 'paper', 'scissors'].sample
-  end
 
 
 
