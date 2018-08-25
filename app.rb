@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
-
+require './lib/game.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -11,12 +11,13 @@ class Rps < Sinatra::Base
 
   post '/name' do
     # using global variable bad practice learn how to avoid!!
-    $player_1 = Player.new(params[:player_1_name])
+    player_1 = Player.new(params[:player_1_name])
+    $game = Game.new(player_1)
     redirect '/welcome'
   end
 
   get '/welcome' do
-    @player = $player_1
+    @game = $game
     erb :welcome
   end
 
@@ -25,12 +26,12 @@ class Rps < Sinatra::Base
   end
 
   post '/choice' do
-    $player_1.choice = params[:user_choice]
+    $game.player.choice = params[:user_choice]
     redirect '/result'
   end
 
   get '/result' do
-    @player = $player_1
+    @game = $game
     erb :result
   end
 
