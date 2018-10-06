@@ -8,11 +8,11 @@ describe Game do
   # when passing in the mocks into the described class arguments you need to just use words and not symbols!!,
 
 
-  describe '#decide_winner' do
-    it "decides who wins the game" do
-      expect(game.decide_winner).to eq(:mockComputer)
-    end
-  end
+  # describe '#decide_winner' do
+  #   it "decides who wins the game" do
+  #     expect(game.decide_winner).to eq(:mockComputer)
+  #   end
+  # end
 
 
 
