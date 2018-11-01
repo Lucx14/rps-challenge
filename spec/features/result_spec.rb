@@ -18,5 +18,4 @@ feature 'show results' do
     expect(page).to have_content("Computer choice is ")
   end
 
-
 end

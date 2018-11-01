@@ -2,7 +2,7 @@
 
 A simple rock, paper, scissors game built with Ruby and sinatra and tested with RSpec and Capybara.
 
-Tags: OOP, TDD, Ruby, HTML, CSS, Sinatra, MVC, RSpec, Capybara
+Tags: OOP, TDD, Ruby, HTML, CSS, Sinatra, MVC, RSpec, Capybara, Rubocop
 
 ## Get Started
 
@@ -18,7 +18,7 @@ $ rackup
 The web app is build on Sinatra using an MVC architecture.
 
 
-The object classes are designed with single responsibility in mind
+The object classes are designed with single responsibility in mind and tested in isolation.
 
 
 

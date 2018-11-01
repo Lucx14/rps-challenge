@@ -4,5 +4,4 @@ class Computer
     ['rock', 'paper', 'scissors'].sample
   end
 
-
 end

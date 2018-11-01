@@ -35,9 +35,7 @@ class Rps < Sinatra::Base
     @game = $game
     erb :result
   end
-
-
-
+  
   run! if app_file == $0
 
 end
