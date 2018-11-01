@@ -2,22 +2,23 @@ require 'game'
 
 
 describe Game do
-  let(:mockComputer) { double :computer, :computer_choice => 'paper' }
-  let(:mockPlayer) { double :player, choice: 'rock' }
-  let(:game) { described_class.new(mockPlayer, mockComputer)}
-  # when passing in the mocks into the described class arguments you need to just use words and not symbols!!,
+  let(:mockComputer) { double :computer, computer_choice: 'paper' }
+  let(:mockPlayer) { double :player, choice: 'scissors' }
+  let(:win_game) { described_class.new(mockPlayer, mockComputer) }
+  
+  let(:mockComputer2) { double :computer, computer_choice: 'rock' }
+  let(:mockPlayer2) { double :player, choice: 'scissors'}
+  let(:lose_game) { described_class.new(mockPlayer2, mockComputer2) }
+
+  let(:mockComputer3) { double :computer, computer_choice: 'rock' }
+  let(:mockPlayer3) { double :player, choice: 'rock' }
+  let(:draw_game) { described_class.new(mockPlayer3, mockComputer3) }
+  
 
 
-  # describe '#decide_winner' do
-  #   it "decides who wins the game" do
-  #     expect(game.decide_winner).to eq(:mockComputer)
-  #   end
-  # end
-
-
-
-
-
-
-
+  describe '#win?' do
+    it "returns true if player has won" do
+      expect(win_game.win?).to eq(true)
+    end
+  end
 end

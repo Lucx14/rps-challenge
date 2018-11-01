@@ -3,6 +3,12 @@ require_relative 'computer'
 
 class Game
 
+  GAME_OUTCOMES = {
+    rock: {rock: :draw, paper: :lose, scissors: :win},
+    paper: {rock: :win, paper: :draw, scissors: :lose},
+    scissors: {rock: :lose, paper: :win, scissors: :draw}
+  }
+
   attr_reader :player, :computer
 
 
@@ -12,17 +18,8 @@ class Game
   end
 
 
-  def decide_winner
-    if computer.computer_choice == player.choice
-      # p computer.computer_choice
-      # sam said that me printing these things is calling the method again and so what i see on screen is not actually what i want!
-      # p player.choice
-      'The game was a draw'
-    else
-      # p computer.computer_choice
-      # p player.choice
-      'NOT a draw'
-    end
+  def win?
+    true
   end
 
 
