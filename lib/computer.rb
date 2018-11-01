@@ -1,7 +1,8 @@
 class Computer
 
-  def computer_choice
-    ['rock', 'paper', 'scissors'].sample
-  end
+  RPS = [:rock, :paper, :scissors]
 
+  def comp_choice
+    RPS.sample
+  end
 end

@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require './lib/player.rb'
 require './lib/game.rb'
 require './lib/computer.rb'
 
@@ -11,29 +10,24 @@ class Rps < Sinatra::Base
   end
 
   post '/name' do
-    # using global variable bad practice learn how to avoid!!
-    player_1 = Player.new(params[:player_1_name])
-    $game = Game.new(player_1)
+    session[:player_name] = params[:player_name]
     redirect '/welcome'
   end
 
   get '/welcome' do
-    @game = $game
+    @player_name = session[:player_name]
     erb :welcome
   end
 
   get '/play' do
+    @game = Game.new(session)
     erb :play
   end
 
-  post '/choice' do
-    $game.player.choice = params[:user_choice]
-    redirect '/result'
-  end
-
-  get '/result' do
-    @game = $game
-    erb :result
+  post '/play' do
+    session[:player_choice] = params[:player_choice].to_sym.downcase
+    session[:computer_choice] = Computer.new.comp_choice
+    redirect '/play'
   end
   
   run! if app_file == $0

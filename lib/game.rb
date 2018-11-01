@@ -1,6 +1,3 @@
-require_relative 'player'
-require_relative 'computer'
-
 class Game
 
   GAME_OUTCOMES = {
@@ -9,11 +6,12 @@ class Game
     scissors: { rock: :lose, paper: :win, scissors: :draw }
   }
 
-  attr_reader :player, :computer
+  attr_reader :player_name, :player_choice, :computer_choice 
 
-  def initialize(player, computer = Computer.new)
-    @player = player
-    @computer = computer
+  def initialize(variables)
+    @player_name = variables["player_name"]
+    @player_choice = variables["player_choice"]
+    @computer_choice = variables["computer_choice"]
   end
 
   def win?
@@ -31,7 +29,8 @@ class Game
   private
 
   def result
-    GAME_OUTCOMES[player.choice][computer.computer_choice]
+    return if @computer_choice.nil?
+    GAME_OUTCOMES[@player_choice][@computer_choice]
   end
 
 end
